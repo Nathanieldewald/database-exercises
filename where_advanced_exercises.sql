@@ -35,7 +35,9 @@ using OR, and who is male. What is the employee number of the top three results.
 
 SELECT emp_no, first_name, gender
 FROM employees
-WHERE first_name IN ('Irena', 'Vidya', 'Maya')
+WHERE (first_name = 'Irena'
+	OR first_name = 'Vidya'
+    OR first_name = 'Maya')
 AND gender = 'M';
 
 /*

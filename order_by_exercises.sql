@@ -26,9 +26,9 @@ Vidya Zweizig
 
 (SELECT emp_no, first_name, last_name
 FROM employees
-WHERE first_name = 'Irena'
+WHERE (first_name = 'Irena'
 OR first_name = 'Vidya'
-OR first_name = 'Maya'
+OR first_name = 'Maya')
 ORDER BY first_name, last_name
 LIMIT 1)
 
@@ -36,9 +36,9 @@ UNION ALL
 
 (SELECT emp_no, first_name, last_name
 FROM employees
-WHERE first_name = 'Irena'
+WHERE (first_name = 'Irena'
 OR first_name = 'Vidya'
-OR first_name = 'Maya'
+OR first_name = 'Maya')
 ORDER BY first_name DESC, last_name DESC
 LIMIT 1);
 
@@ -52,9 +52,9 @@ Vidya Zweizig
 
 (SELECT emp_no, first_name, last_name
 FROM employees
-WHERE first_name = 'Irena'
+WHERE (first_name = 'Irena'
 OR first_name = 'Vidya'
-OR first_name = 'Maya'
+OR first_name = 'Maya')
 ORDER BY last_name, first_name
 LIMIT 1)
 
@@ -62,9 +62,9 @@ UNION ALL
 
 (SELECT emp_no, first_name, last_name
 FROM employees
-WHERE first_name = 'Irena'
+WHERE (first_name = 'Irena'
 OR first_name = 'Vidya'
-OR first_name = 'Maya'
+OR first_name = 'Maya')
 ORDER BY last_name DESC, first_name DESC
 LIMIT 1);
 
@@ -72,6 +72,7 @@ LIMIT 1);
 5.Write a query to to find all employees whose last name starts and ends with 'E'. Sort the results by their employee number. 
 Enter a comment with the number of employees returned, the first employee number and their first and last name, and the last 
 employee number with their first and last name.
+899
 10021 Ramzi Erde
 499994 Navin Argence
 */
@@ -97,6 +98,7 @@ LIMIT 1);
 6.Write a query to to find all employees whose last name starts and ends with 'E'. Sort the results by their hire date, 
 so that the newest employees are listed first. Enter a comment with the number of employees returned, the name of the 
 newest employee, and the name of the oldest employee.
+899
 67892 Eldridge
 233488 Erde
 */
@@ -121,6 +123,7 @@ LIMIT 1);
 7.Find all employees hired in the 90s and born on Christmas. Sort the results so that the oldest employee who was hired last is the first result. 
 Enter a comment with the number of employees returned, the name of the oldest employee who was hired last, and the name of the youngest employee 
 who was hired first.
+362
 33936 Khun Bernini
 412745 Douadi Pettis
 */
