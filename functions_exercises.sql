@@ -46,11 +46,13 @@ Find the smallest and largest current salary from the salaries table.
 
 (select * 
 from salaries
+where to_date > now()
 order by salary
 limit 1)
 union all
 (select *
 from salaries
+where to_date > now()
 order by salary desc
 limit 1);
 
