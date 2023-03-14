@@ -107,6 +107,7 @@ where d.dept_name = 'customer service'
 and  t.to_date > now()
 group by t.title 
 order by t.title;
+
 select *
 from dept_emp;
 
@@ -144,11 +145,15 @@ order by d.dept_no;
 7.Which department has the highest average salary? Hint: Use current not historic information.
 */
 
-select d.dept_name,round(avg(s.salary),2)
+select d.dept_name,round(avg(s.salary),2) avg_salary
 from salaries s
 join dept_emp de on de.emp_no = s.emp_no
+	and de.to_date > now()
+    and s.to_date > now()
 join departments d on d.dept_no = de.dept_no
-group by d.dept_name;
+group by d.dept_name
+order by avg_salary desc
+limit 1;
 
 /*
 8.Who is the highest paid employee in the Marketing department?
@@ -183,6 +188,7 @@ join departments d on dm.dept_no = d.dept_no
 where dm.to_date > now()
 and s.to_date > now()
 order by s.salary desc
+limit 1
 ;
 
 
@@ -195,6 +201,8 @@ from departments d
 join dept_emp de on de.dept_no = d.dept_no
 join employees e on e.emp_no = de.emp_no
 join salaries s on s.emp_no = e.emp_no
+group by d.dept_name
+order by average_salary desc
 
 ;
 
